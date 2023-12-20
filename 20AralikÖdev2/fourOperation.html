@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödev 2</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #calculator {
+            display: inline-block;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        input {
+            width: 150px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div id="calculator">
+    <input type="number" id="num1" placeholder="Sayı 1">
+    <input type="number" id="num2" placeholder="Sayı 2">
+    <br>
+    <button onclick="calculate('add')">Toplama</button>
+    <button onclick="calculate('subtract')">Çıkarma</button>
+    <button onclick="calculate('multiply')">Çarpma</button>
+    <button onclick="calculate('divide')">Bölme</button>
+</div>
+
+<script>
+    function calculate(operation) {
+        var num1 = parseFloat(document.getElementById('num1').value);
+        var num2 = parseFloat(document.getElementById('num2').value);
+        var result;
+
+        switch (operation) {
+            case 'add':
+                result = num1 + num2;
+                break;
+            case 'subtract':
+                result = num1 - num2;
+                break;
+            case 'multiply':
+                result = num1 * num2;
+                break;
+            case 'divide':
+                if (num2 !== 0) {
+                    result = num1 / num2;
+                } else {
+                    alert("Sıfıra bölme hatası!");
+                    return;
+                }
+                break;
+            default:
+                alert("Geçersiz işlem!");
+                return;
+        }
+
+        alert("Sonuç: " + result.toFixed(5));
+    }
+</script>
+
+</body>
+</html>

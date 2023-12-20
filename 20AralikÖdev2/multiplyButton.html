@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödev2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+       
+        button:focus {
+            outline: 2px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <label for="numberInput">Sayıyı Girin:</label>
+    <input type="text" id="numberInput" placeholder="Sayıyı girin">
+
+    <button onclick="calculateAndDisplay()">Hesapla</button>
+
+    <script>
+        function calculateAndDisplay() {
+            
+            var inputValue = document.getElementById('numberInput').value;
+
+            if (!isNaN(inputValue)) {
+                
+                var result = parseFloat(inputValue) * 1.8;
+                alert("Sonuç: " + result);
+            } else {
+               
+                alert("Geçersiz Değer. Lütfen bir sayı girin.");
+            }
+        }
+    </script>
+
+</body>
+</html>
