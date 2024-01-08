@@ -7,7 +7,7 @@ const HomeScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>React Native BOOTCAMP TASK 4</Text>
+      <Text style={styles.title}>RN BOOTCAMP TASK 4</Text>
       <View style={styles.buttonContainer}>
 
 
